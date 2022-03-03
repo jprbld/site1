@@ -10,7 +10,8 @@ def index(request, pagename):
     context = {
         'title': pg.title,
         'content': pg.body_text,
-        'last_updated': pg.update_date
+        'last_updated': pg.update_date,
+        'page_list': Page.objects.all()
     }
     # assert False
     return render(request, 'pages/page.html', context)
